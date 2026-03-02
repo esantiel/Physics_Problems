@@ -12,13 +12,13 @@ Dysponujesz dokładnie trzema opornikami $1\,\Omega$. Jakie wszystkie możliwe r
 
 Oblicz rezystancję zastępczą dla obwodu pokazanego na rysunku. Wszystkie oporniki mają rezystancję $5\ \Omega$.
 
-![width:100px](image-r1.png)
+![alt](image-r1.png)
 
 ## 4. Obwód mieszany
 
 Oblicz rezystancję zastępczą dla obwodu pokazanego na rysunku. Wszystkie oporniki mają rezystancję $10\ \Omega$.
 
-![width:100px](image-r2.png)
+![alt](image-r2.png)
 
 ## 5. Prawa Kirchhoffa
 
@@ -28,13 +28,13 @@ Stosując prawa Kirchhoffa, wyznacz prądy $I_1$, $I_2$, $I_3$ (płynące odpowi
 - Prawe oczko: źródło $\mathcal{E}_2 = 9\,\text{V}$ połączone szeregowo z oporem wewnętrznym $r_w = 1\,\Omega$.
 - Gałąź wspólna: opornik $R_2 = 10\,\Omega$ łączący węzeł górny prawy z węzłem dolnym.
 
-![width:100px](image-k1.png)
+![alt](image-k1.png)
 
 ## 6. Prawa Kirchhoffa ponownie
 
 Oblicz prąd płynący przez amperomierz.
 
-![width:100px](image-k2.png)
+![alt](image-k2.png)
 
 ## 7. Kondensatory połączone równolegle
 
