@@ -1,4 +1,4 @@
-# Section 0: Mathematical Foundations
+ # Section 0: Mathematical Foundations
 
 ## 1. Vector Algebra
 
