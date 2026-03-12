@@ -1,316 +1,296 @@
-# Projectile Motion – Step-by-Step Solution
+# 1. Projectile Motion
 
-## Problem Statement
+A projectile is fired from the ground with an initial velocity of  
+$v_0 = 100 \text{ m/s}$ at an angle of $\theta = 37^\circ$ above the horizontal.
 
-A projectile is fired from the ground with:
+Assume:
 
-- Initial velocity: $$v_0 = 100 \text{ m/s}$$
-- Launch angle: $$\theta = 37^\circ$$
 - No air resistance
-- Gravity: $$g = 9.81 \text{ m/s}^2$$
+- Motion occurs under constant gravitational acceleration
+- $g = 9.81 \text{ m/s}^2$
 
-We will:
+We want to:
 
-1. Derive the differential equations of motion.
-2. Determine the time of flight.
-3. Determine the maximum height.
-4. Determine the range.
+1. Derive the **differential equations of motion**
+2. Determine the **time of flight**
+3. Determine the **maximum height**
+4. Determine the **range**
 
 ---
 
 # 1️⃣ Basic Theory
 
-## Assumptions
+Projectile motion is a type of **two-dimensional motion** where an object moves under the influence of gravity.
 
-- Motion in two dimensions: horizontal ($$x$$) and vertical ($$y$$)
-- No air resistance
-- Only force acting is gravity
-- Gravity is constant and downward
+The motion can be separated into:
 
----
+- **Horizontal motion ($x$ direction)**  
+- **Vertical motion ($y$ direction)**
 
-## Newton’s Second Law
+Important assumptions:
 
-$$
-\vec{F} = m \vec{a}
-$$
-
-Only force acting:
-
-- Horizontal direction: no force
-- Vertical direction: $$F_y = -mg$$
+- Horizontal acceleration = **0**
+- Vertical acceleration = **$-g$**
 
 ---
 
-# 2️⃣ Differential Equations of Motion
+# 2️⃣ Initial Velocity Components
 
----
-
-## Horizontal Direction
-
-Since no horizontal force acts:
+The initial velocity $v_0$ can be split into horizontal and vertical components.
 
 $$
-F_x = 0
+v_{0x} = v_0 \cos\theta
 $$
 
-Using Newton’s second law:
-
 $$
-m \frac{d^2 x}{dt^2} = 0
+v_{0y} = v_0 \sin\theta
 $$
 
-Canceling $$m$$:
+Substitute values:
 
 $$
-\frac{d^2 x}{dt^2} = 0
+v_{0x} = 100\cos(37^\circ)
 $$
 
-### First Integration
-
 $$
-\frac{dx}{dt} = v_x = C_1
+v_{0y} = 100\sin(37^\circ)
 $$
 
-Using the initial condition:
+Using approximations:
 
 $$
-v_x = v_0 \cos\theta
+\cos(37^\circ) \approx 0.798
 $$
 
-### Second Integration
+$$
+\sin(37^\circ) \approx 0.602
+$$
 
-Assuming $$x(0)=0$$:
+Therefore:
 
 $$
-x(t) = v_0 \cos\theta \, t
+v_{0x} \approx 79.8 \text{ m/s}
+$$
+
+$$
+v_{0y} \approx 60.2 \text{ m/s}
 $$
 
 ---
 
-## Vertical Direction
+# 3️⃣ Differential Equations of Motion
 
-Gravity acts downward:
+## Horizontal Motion
+
+No force acts horizontally.
+
+From Newton's second law:
+
+$$
+F_x = m\frac{d^2x}{dt^2}
+$$
+
+Since $F_x = 0$:
+
+$$
+\frac{d^2x}{dt^2} = 0
+$$
+
+Integrating once:
+
+$$
+\frac{dx}{dt} = v_{0x}
+$$
+
+Integrating again:
+
+$$
+x(t) = v_{0x}t
+$$
+
+---
+
+## Vertical Motion
+
+Gravity acts downward.
 
 $$
 F_y = -mg
 $$
 
-Newton’s second law:
+Using Newton's second law:
 
 $$
-m \frac{d^2 y}{dt^2} = -mg
+m\frac{d^2y}{dt^2} = -mg
 $$
 
-Canceling $$m$$:
+Cancel $m$:
 
 $$
-\frac{d^2 y}{dt^2} = -g
+\frac{d^2y}{dt^2} = -g
 $$
 
-### First Integration
+Integrating once:
 
 $$
-\frac{dy}{dt} = v_y = -gt + C_2
+\frac{dy}{dt} = v_{0y} - gt
 $$
 
-Using initial condition:
+Integrating again:
 
 $$
-v_y(0) = v_0 \sin\theta
-$$
-
-So:
-
-$$
-v_y = v_0 \sin\theta - gt
-$$
-
-### Second Integration
-
-Assuming $$y(0)=0$$:
-
-$$
-y(t) = v_0 \sin\theta \, t - \frac{1}{2} g t^2
+y(t) = v_{0y}t - \frac{1}{2}gt^2
 $$
 
 ---
 
-# 3️⃣ Time of Flight
+# 4️⃣ Time of Flight
 
-The projectile lands when:
-
-$$
-y(t) = 0
-$$
-
-So:
+The projectile lands when $y = 0$.
 
 $$
-v_0 \sin\theta \, t - \frac{1}{2} g t^2 = 0
+0 = v_{0y}t - \frac{1}{2}gt^2
 $$
 
-Factor:
+Factor $t$:
 
 $$
-t \left( v_0 \sin\theta - \frac{1}{2} g t \right) = 0
+t(v_{0y} - \frac{1}{2}gt) = 0
 $$
 
-Ignoring $$t=0$$:
+Ignoring $t=0$:
 
 $$
-t = \frac{2 v_0 \sin\theta}{g}
+t = \frac{2v_{0y}}{g}
 $$
 
----
-
-### Substitute Values
+Substitute values:
 
 $$
-t = \frac{2(100)\sin(37^\circ)}{9.81}
-$$
-
-Using:
-
-$$
-\sin(37^\circ) \approx 0.601
+t = \frac{2(60.2)}{9.81}
 $$
 
 $$
-t = \frac{120.2}{9.81}
-$$
-
-$$
-t \approx 12.25 \text{ s}
+t \approx 12.28 \text{ s}
 $$
 
 ---
 
-# 4️⃣ Maximum Height
+# 5️⃣ Maximum Height
 
-Maximum height occurs when:
-
-$$
-v_y = 0
-$$
-
-From:
+Maximum height occurs when vertical velocity becomes zero.
 
 $$
-v_y = v_0 \sin\theta - gt
+v_y = v_{0y} - gt
 $$
 
-Set equal to zero:
+Set $v_y = 0$:
 
 $$
-t_{max} = \frac{v_0 \sin\theta}{g}
+t_{max} = \frac{v_{0y}}{g}
 $$
 
----
-
-### Height Formula
-
-Using position equation:
+Substitute:
 
 $$
-H = v_0 \sin\theta \, t_{max} - \frac{1}{2} g t_{max}^2
-$$
-
-This simplifies to:
-
-$$
-H = \frac{(v_0 \sin\theta)^2}{2g}
-$$
-
----
-
-### Substitute Values
-
-$$
-H = \frac{(100 \times 0.601)^2}{2(9.81)}
+t_{max} = \frac{60.2}{9.81}
 $$
 
 $$
-H = \frac{3612}{19.62}
+t_{max} \approx 6.14 \text{ s}
+$$
+
+Now substitute into the position equation:
+
+$$
+H = v_{0y}t_{max} - \frac{1}{2}gt_{max}^2
+$$
+
+Using the simplified formula:
+
+$$
+H = \frac{v_{0y}^2}{2g}
+$$
+
+Substitute:
+
+$$
+H = \frac{(60.2)^2}{2(9.81)}
 $$
 
 $$
-H \approx 184.1 \text{ m}
+H \approx 184.6 \text{ m}
 $$
 
 ---
 
-# 5️⃣ Range
+# 6️⃣ Range
 
-Range formula:
-
-$$
-R = \frac{v_0^2 \sin(2\theta)}{g}
-$$
-
----
-
-### Substitute Values
+The range is the horizontal distance traveled.
 
 $$
-R = \frac{100^2 \sin(74^\circ)}{9.81}
+R = v_{0x} \times t
 $$
 
-Using:
+Substitute values:
 
 $$
-\sin(74^\circ) \approx 0.961
+R = 79.8 \times 12.28
 $$
 
 $$
-R = \frac{9610}{9.81}
-$$
-
-$$
-R \approx 979.6 \text{ m}
+R \approx 980 \text{ m}
 $$
 
 ---
 
 # ✅ Final Answers
 
-- Differential equations:
+### Differential Equations
+
+Horizontal motion:
 
 $$
-\frac{d^2 x}{dt^2} = 0
+\frac{d^2x}{dt^2} = 0
 $$
 
-$$
-\frac{d^2 y}{dt^2} = -g
-$$
-
-- Time of flight:
+Vertical motion:
 
 $$
-12.25 \text{ s}
-$$
-
-- Maximum height:
-
-$$
-184.1 \text{ m}
-$$
-
-- Range:
-
-$$
-979.6 \text{ m}
+\frac{d^2y}{dt^2} = -g
 $$
 
 ---
 
-# 🎯 Summary
+### Time of Flight
 
-- Horizontal motion: constant velocity  
-- Vertical motion: uniformly accelerated motion  
-- Trajectory: parabolic  
-- Motion is symmetric (time up = time down)
+$$
+t \approx 12.28 \text{ s}
+$$
 
 ---
 
-If you'd like, I can also provide a fully LaTeX (.tex) version ready for Overleaf.
+### Maximum Height
+
+$$
+H \approx 184.6 \text{ m}
+$$
+
+---
+
+### Range
+
+$$
+R \approx 980 \text{ m}
+$$
+
+---
+
+# 📌 Key Insight
+
+Projectile motion can be analyzed by separating motion into:
+
+- **Horizontal motion (constant velocity)**
+- **Vertical motion (constant acceleration)**
+
+The trajectory of the projectile forms a **parabolic path**.

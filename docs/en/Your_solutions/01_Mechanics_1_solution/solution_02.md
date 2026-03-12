@@ -90,9 +90,7 @@ $$
 
 ## Step 1: Take Derivative
 
-Differentiate with respect to:
-
-$$\theta$$
+Differentiate with respect to: $\theta$
 
 $$
 \frac{dR}{d\theta} = C \cdot \frac{d}{d\theta}[\sin(2\theta)]
@@ -250,4 +248,3 @@ $$
 
 ---
 
-If you'd like, I can also provide a geometric interpretation or a graph of the range vs angle. 
