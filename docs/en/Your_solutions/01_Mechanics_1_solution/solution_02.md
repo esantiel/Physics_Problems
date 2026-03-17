@@ -48,7 +48,7 @@ $$
 \frac{v_0^2}{g}
 $$
 
-Therefore, the only quantity that depends on the launch angle is:$$\theta$$
+Therefore, the only quantity that depends on the launch angle is: $\theta$
 
 $$
 \sin(2\theta)
