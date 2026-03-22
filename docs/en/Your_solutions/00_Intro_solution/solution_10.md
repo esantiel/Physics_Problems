@@ -1,161 +1,93 @@
-# 10. Infinite Series — Full Solution
+# 📘 Infinite Series – Ant’s Final Position
 
-An ant starts at the origin:
+An ant starts at the **origin** and moves according to this pattern:
 
-$$
-(x_0, y_0) = (0,0)
-$$
+1. \(1\) m east  
+2. \(1/2\) m north  
+3. \(1/3\) m west  
+4. \(1/4\) m south  
+5. \(1/5\) m east  
+6. \(1/6\) m north  
+… and so on.
 
-It moves in the following pattern:
-
-- $1$ m east  
-- $\frac12$ m north  
-- $\frac13$ m west  
-- $\frac14$ m south  
-- $\frac15$ m east  
-- $\frac16$ m north  
-- $\frac17$ m west  
-- $\frac18$ m south  
-- and so on.
-
-Observe:
-
-- Odd denominators ($1,3,5,7,\dots$) correspond to horizontal motion.
-- Even denominators ($2,4,6,8,\dots$) correspond to vertical motion.
-- Directions alternate (east/west and north/south).
-
-We compute horizontal and vertical displacements separately.
+We are asked to find its **final position**.
 
 ---
 
-## Step 1: Horizontal displacement
+## 🧠 Theory
 
-The horizontal motion is:
+- The ant’s motion forms **two separate infinite series** along the x-axis (east-west) and y-axis (north-south).
+- **X-axis (east-west) series**: \(+1, -1/3, +1/5, -1/7, \dots\)  
+- **Y-axis (north-south) series**: \(+1/2, -1/4, +1/6, -1/8, \dots\)  
 
+These are **alternating harmonic series**:
+
+1. X-axis:  
 $$
-+1,\; -\frac13,\; +\frac15,\; -\frac17,\; +\frac19,\dots
+x_\text{total} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots
 $$
-
-Thus the total horizontal displacement is:
-
+2. Y-axis:  
 $$
-x = 1 - \frac13 + \frac15 - \frac17 + \frac19 - \cdots
+y_\text{total} = \frac{1}{2} - \frac{1}{4} + \frac{1}{6} - \frac{1}{8} + \dots
 $$
 
 ---
 
-## Step 2: Recognize the series
+## 🔹 Step 1: Recognize the series
 
-We use the Taylor expansion:
-
+- **X-axis series** is the **Leibniz series** for \(\pi/4\):
 $$
-\arctan(z) = z - \frac{z^3}{3} + \frac{z^5}{5} - \frac{z^7}{7} + \cdots
-$$
-
-For $z = 1$:
-
-$$
-\arctan(1) = 1 - \frac13 + \frac15 - \frac17 + \cdots
+1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots = \frac{\pi}{4}
 $$
 
-But we know:
-
+- **Y-axis series** can be factored as:
 $$
-\arctan(1) = \frac{\pi}{4}
+y_\text{total} = \frac{1}{2}\Big(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots \Big)
 $$
-
-Therefore:
-
-$$
-x = \frac{\pi}{4}
-$$
-
----
-
-## Step 3: Vertical displacement
-
-The vertical motion is:
-
-$$
-+\frac12,\; -\frac14,\; +\frac16,\; -\frac18,\; +\frac1{10},\dots
-$$
-
-Thus:
-
-$$
-y = \frac12 - \frac14 + \frac16 - \frac18 + \frac1{10} - \cdots
-$$
-
-Factor out $\frac12$:
-
-$$
-y = \frac12\left(1 - \frac12 + \frac13 - \frac14 + \frac15 - \cdots\right)
-$$
-
-Define:
-
-$$
-S = 1 - \frac12 + \frac13 - \frac14 + \frac15 - \cdots
-$$
-
+The term in parentheses is also an alternating harmonic series that converges to \(\ln 2\).  
 So:
-
 $$
-y = \frac12 S
+y_\text{total} = \frac{\ln 2}{1} \cdot \frac{1}{?} 
+$$
+
+Let's carefully compute:
+
+**Alternating harmonic series:**  
+$$
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots = \ln 2
+$$  
+
+Y-series factor:  
+$$
+y_\text{total} = \frac{1}{2} - \frac{1}{4} + \frac{1}{6} - \frac{1}{8} + \dots
+$$
+
+Factor \(1/2\) out:
+$$
+y_\text{total} = \frac{1}{2} \left(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots\right) = \frac{\ln 2}{2}
+$$
+
+✅ Perfect.
+
+---
+
+## 🔹 Step 2: Final position
+
+- **X-coordinate**:  
+$$
+x_\text{final} = \frac{\pi}{4} \approx 0.785 \, \text{m}
+$$
+
+- **Y-coordinate**:  
+$$
+y_\text{final} = \frac{\ln 2}{2} \approx 0.347 \, \text{m}
 $$
 
 ---
 
-## Step 4: Recognize the alternating harmonic series
-
-We use the Taylor expansion:
+## ✅ Final Answer
 
 $$
-\ln(1+z) = z - \frac{z^2}{2} + \frac{z^3}{3} - \frac{z^4}{4} + \cdots
+\boxed{(x, y) \approx (0.785, 0.347) \, \text{meters}}
 $$
 
-For $z = 1$:
-
-$$
-\ln(2) = 1 - \frac12 + \frac13 - \frac14 + \cdots
-$$
-
-Therefore:
-
-$$
-S = \ln(2)
-$$
-
-Thus:
-
-$$
-y = \frac12 \ln(2)
-$$
-
----
-
-## Step 5: Final position
-
-$$
-\boxed{
-(x,y) = \left(\frac{\pi}{4}, \frac12 \ln(2)\right)
-}
-$$
-
----
-
-## Step 6: Numerical approximation
-
-$$
-\frac{\pi}{4} \approx 0.7854
-$$
-
-$$
-\frac12 \ln(2) \approx 0.3466
-$$
-
-Therefore:
-
-$$
-(x,y) \approx (0.785,\; 0.347)
-$$

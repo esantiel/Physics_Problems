@@ -11,8 +11,8 @@ $$
 Calculate:
 
 a) The magnitude of each vector  
-b) The dot product \( \vec{a}\cdot\vec{b} \)  
-c) The cross product \( \vec{a}\times\vec{b} \)  
+b) The dot product ( $\vec{a}\cdot\vec{b}$)  
+c) The cross product ( $\vec{a}\times\vec{b}$)  
 d) The angle between the vectors  
 
 ---
@@ -29,9 +29,9 @@ $$
 
 where
 
-- \(v_x\) is the x-component  
-- \(v_y\) is the y-component  
-- \(v_z\) is the z-component  
+- ($v_x$) is the x-component  
+- ($v_y$) is the y-component  
+- ($v_z$) is the z-component  
 
 ---
 
@@ -396,10 +396,3 @@ $$
 $$
 
 ---
-
-# 🎯 Key Takeaways
-
-- **Magnitude** measures vector length.
-- **Dot product** measures similarity in direction.
-- **Cross product** produces a vector perpendicular to both vectors.
-- **Angle between vectors** comes from the dot-product identity.
