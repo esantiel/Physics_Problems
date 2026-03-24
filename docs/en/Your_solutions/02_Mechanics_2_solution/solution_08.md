@@ -190,6 +190,7 @@ $$
 # ✅ Final Results
 
 - Equation of motion:
+
 $$
 \ddot{x} + \frac{k}{m}x = 0
 $$
