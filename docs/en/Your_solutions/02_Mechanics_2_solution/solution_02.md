@@ -70,11 +70,13 @@ $$
 We read directly:
 
 - Amplitude:
+
 $$
 A = 0.2 \, \text{m}
 $$
 
 - Angular frequency:
+
 $$
 \omega = 10\pi \, \text{rad/s}
 $$
@@ -154,11 +156,13 @@ $$
 # ✅ Final Answers
 
 - Spring constant:
+
 $$
 k = 1000\pi^2 \approx 9870 \, \text{N/m}
 $$
 
 - Total mechanical energy:
+
 $$
 E = 20\pi^2 \approx 197.4 \, \text{J}
 $$
