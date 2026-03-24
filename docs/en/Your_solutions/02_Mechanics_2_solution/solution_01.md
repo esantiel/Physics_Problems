@@ -176,11 +176,13 @@ $$
 # 🎯 Final Answers
 
 - **Period on the Moon:**
+
 $$
 T_M \approx 9.8 \text{ s}
 $$
 
 - **Required length for 1-second period:**
+
 $$
 L \approx 0.25 \text{ m}
 $$
