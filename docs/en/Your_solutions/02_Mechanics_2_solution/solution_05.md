@@ -135,6 +135,7 @@ The lost energy is transformed into:
 # ✅ Final Answers
 
 - Final speed:
+
 $$
 v_f = 1 \text{ m/s}
 $$
