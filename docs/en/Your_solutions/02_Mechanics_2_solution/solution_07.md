@@ -13,14 +13,17 @@ m_2 = 10 \text{ kg}
 $$
 
 - A horizontal force:
+
 $$
 F = 45 \text{ N}
 $$
+
 is applied to the 10 kg block.
 
 - The 5 kg block is **tied to a wall** (so it does not move).
 
 - Coefficient of kinetic friction:
+
 $$
 \mu_k = 0.2
 $$
@@ -40,7 +43,7 @@ f_k = \mu_k N
 $$
 
 Where:
-- \(N\) = normal force
+- $(N)$ = normal force
 
 ---
 
