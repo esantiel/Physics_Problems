@@ -36,11 +36,13 @@ $$
 ### 📌 Given
 
 - Earth period:
+
 $$
 T_E = 4 \text{ s}
 $$
 
 - Moon gravity:
+
 $$
 g_M = \frac{g_E}{6}
 $$
