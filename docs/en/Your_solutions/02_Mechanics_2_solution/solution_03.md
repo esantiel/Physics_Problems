@@ -37,11 +37,13 @@ $$
 ## Energy Formulas
 
 - Gravitational potential energy:
+
 $$
 U = mgh
 $$
 
 - Kinetic energy:
+
 $$
 K = \frac{1}{2}mv^2
 $$
