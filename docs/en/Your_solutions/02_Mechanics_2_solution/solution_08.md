@@ -164,7 +164,7 @@ $$
 
 # 🔹 5. Graphs
 
-## Force \(F(x)\)
+## Force $(F(x))$
 
 $$
 F(x) = -kx
@@ -176,14 +176,14 @@ $$
 
 ---
 
-## Potential Energy \(U(x)\)
+## Potential Energy $(U(x))$
 
 $$
 U(x) = \frac{1}{2}kx^2
 $$
 
 - Parabola opening upward  
-- Minimum at \(x = 0\)  
+- Minimum at $(x = 0)$  
 
 ---
 
@@ -195,21 +195,25 @@ $$
 $$
 
 - Solution:
+
 $$
 x(t) = A\cos(\omega t) + B\sin(\omega t)
 $$
 
 - Work:
+
 $$
 W = -\frac{1}{2}k x_0^2
 $$
 
 - Potential energy:
+
 $$
 U(x) = \frac{1}{2}kx^2
 $$
 
 - Verified:
+
 $$
 F = -\frac{dU}{dx}
 $$
