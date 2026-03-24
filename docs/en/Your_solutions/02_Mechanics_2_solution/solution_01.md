@@ -9,9 +9,9 @@ T = 2\pi \sqrt{\frac{L}{g}}
 $$
 
 Where:
-- \(T\) = period (seconds)
-- \(L\) = length of the pendulum (meters)
-- \(g\) = gravitational acceleration \((\text{m/s}^2)\)
+- $(T)$ = period (seconds)
+- $(L)$ = length of the pendulum (meters)
+- $(g)$ = gravitational acceleration $(\text{m/s}^2)$
 
 ---
 
