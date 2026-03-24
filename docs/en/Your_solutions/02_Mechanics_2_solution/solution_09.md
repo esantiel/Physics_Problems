@@ -36,7 +36,7 @@ $$
 
 ## Standard Form
 
-Divide by \(m\):
+Divide by $(m)$:
 
 $$
 \frac{dv}{dt} = -g - \frac{k}{m}v
@@ -58,7 +58,7 @@ This is a **first-order linear differential equation**.
 
 ---
 
-# ✏️ 1️⃣ Solve for Velocity \(v(t)\)
+# ✏️ 1️⃣ Solve for Velocity $(v(t))$
 
 ## 🔹 Step 1: Solve homogeneous equation
 
@@ -120,7 +120,7 @@ $$
 
 ---
 
-# ✏️ 2️⃣ Position Function \(x(t)\)
+# ✏️ 2️⃣ Position Function $(x(t))$
 
 Integrate velocity:
 
@@ -228,11 +228,13 @@ $$
 # ✅ Final Results
 
 - Velocity:
+
 $$
 v(t) = \left(v_0 + \frac{g}{\gamma}\right)e^{-\gamma t} - \frac{g}{\gamma}
 $$
 
 - Time to max height:
+
 $$
 t_{\text{max}} = \frac{1}{\gamma} \ln\left(\frac{\gamma v_0 + g}{g}\right)
 $$
@@ -240,10 +242,3 @@ $$
 - Height: obtained from $(x(t))$
 
 ---
-
-# 🎯 Key Insights
-
-- Drag introduces **exponential behavior**
-- Motion is no longer symmetric
-- Maximum height is reduced
-- Terminal velocity appears for long time
