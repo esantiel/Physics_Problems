@@ -60,7 +60,7 @@ $$
 kx=n\pi
 $$
 
-where \(n=0,\pm1,\pm2,\dots\)
+where $(n=0,\pm1,\pm2,\dots)$
 
 So the node positions are:
 
