@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Source Superposition</title>
+    <style>
+        body { margin: 0; background: #111; color: white; font-family: sans-serif; overflow: hidden; display: flex; flex-direction: column; align-items: center; }
+        canvas { cursor: crosshair; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .controls { background: rgba(30, 30, 30, 0.9); padding: 15px; border-radius: 0 0 10px 10px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; z-index: 10; }
+        .control-group { display: flex; flex-direction: column; align-items: center; }
+        label { font-size: 12px; margin-bottom: 5px; color: #aaa; }
+        span { font-weight: bold; color: #4af; }
+        button { cursor: pointer; padding: 5px 15px; background: #444; border: none; color: white; border-radius: 4px; transition: 0.2s; }
+        button:hover { background: #666; }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <div class="control-group">
+        <label>Attenuation (α): <span id="alphaVal">0.5</span></label>
+        <input type="range" id="alpha" min="0" max="2" step="0.1" value="0.5">
+    </div>
+    <div class="control-group">
+        <label>Wave Number (k): <span id="kVal">0.1</span></label>
+        <input type="range" id="k" min="0.01" max="0.3" step="0.01" value="0.1">
+    </div>
+    <div class="control-group">
+        <label>Freq (ω): <span id="wVal">0.05</span></label>
+        <input type="range" id="w" min="0.01" max="0.2" step="0.01" value="0.05">
+    </div>
+    <div class="control-group">
+        <button id="clear">Clear Sources</button>
+    </div>
+    <div style="font-size: 11px; color: #888; align-self: center;">Click on canvas to add sources</div>
+</div>
+
+<canvas id="waveCanvas"></canvas>
+
+<script>
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+    const sources = [];
+    
+    // Parameters
+    let alpha = 0.5;
+    let k = 0.1;
+    let omega = 0.05;
+    let time = 0;
+    const amplitude = 40; // Base scaling factor A
+
+    // Setup Canvas
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight - 80;
+    }
+    window.onresize = resize;
+    resize();
+
+    // UI Listeners
+    document.getElementById('alpha').oninput = e => { alpha = parseFloat(e.target.value); document.getElementById('alphaVal').innerText = alpha; };
+    document.getElementById('k').oninput = e => { k = parseFloat(e.target.value); document.getElementById('kVal').innerText = k; };
+    document.getElementById('w').oninput = e => { omega = parseFloat(e.target.value); document.getElementById('wVal').innerText = omega; };
+    document.getElementById('clear').onclick = () => sources.length = 0;
+
+    canvas.addEventListener('mousedown', e => {
+        sources.push({ x: e.clientX, y: e.clientY - 80 });
+    });
+
+    function animate() {
+        time += 1;
+        const w = canvas.width;
+        const h = canvas.height;
+        
+        // We use an ImageData object for pixel-level manipulation (faster than drawing rects)
+        const imgData = ctx.createImageData(w, h);
+        const data = imgData.data;
+
+        // Optimization: decrease resolution for performance if needed
+        // Here we iterate every pixel. For 4K screens, consider a step of 2.
+        const step = 2; 
+
+        for (let y = 0; y < h; y += step) {
+            for (let x = 0; x < w; x += step) {
+                let u = 0;
+
+                for (let i = 0; i < sources.length; i++) {
+                    const s = sources[i];
+                    const dx = x - s.x;
+                    const dy = y - s.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy) || 0.1; // Avoid division by zero
+
+                    // The Equation: u = (A / dist^alpha) * sin(k*dist - omega*t)
+                    u += (amplitude / Math.pow(dist, alpha)) * Math.sin(k * dist - omega * time);
+                }
+
+                // Map wave displacement to color (Blue for positive, Red for negative)
+                const r = 128 + u;
+                const g = 128 + u * 0.5; // Slight cyan tint
+                const b = 128 - u;
+
+                // Fill pixel block (based on step size)
+                for (let sy = 0; sy < step; sy++) {
+                    for (let sx = 0; sx < step; sx++) {
+                        const index = ((y + sy) * w + (x + sx)) * 4;
+                        if (index < data.length) {
+                            data[index] = r;     // R
+                            data[index + 1] = g; // G
+                            data[index + 2] = b; // B
+                            data[index + 3] = 255; // Alpha
+                        }
+                    }
+                }
+            }
+        }
+
+        ctx.putImageData(imgData, 0, 0);
+
+        // Draw source points
+        ctx.fillStyle = "white";
+        sources.forEach(s => {
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, 3, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+</body>
+</html>
