@@ -4,9 +4,7 @@
 
 A sound wave in air has a frequency of 440 Hz. If the speed of sound in air is 343 m/s, what is its wavelength? What is its wavelength in water, where the speed of sound is 1482 m/s?
 
-## 2. String Harmonics
 
-A guitar string is 64 cm long and has a fundamental frequency (one antinode) of 330 Hz. What is the speed of the wave on this string?
 
 ## 3. Superposition Principle
 
