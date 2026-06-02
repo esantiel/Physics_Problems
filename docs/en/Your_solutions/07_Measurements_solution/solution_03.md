@@ -62,18 +62,18 @@ $$
 0.045
 $$
 
-Now calculate the absolute uncertainty:
+The absolute uncertainty is:
 
 $$
 \Delta R
 =
-R\left(\frac{\Delta R}{R}\right)
+R \times \frac{\Delta R}{R}
 $$
 
 $$
 \Delta R
 =
-5.00(0.045)
+5.00 \times 0.045
 $$
 
 $$
@@ -82,7 +82,7 @@ $$
 0.225\,\Omega
 $$
 
-Rounding the uncertainty to two significant figures:
+Rounding to two significant figures:
 
 $$
 \Delta R \approx 0.23\,\Omega
